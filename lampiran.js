@@ -11,8 +11,8 @@ async function getDatalampiran() {
       const { values } = row;
       return {
         KTP: values[1].formattedValue,
-        fotoKTP: values[13].formattedValue.replaceAll("open?", "uc?"),
-        fotoKK: values[14].formattedValue.replaceAll("open?", "uc?"),
+        fotoKTP: String(values[13].formattedValue).replaceAll("open?", "uc?"),
+        fotoKK: String(values[14].formattedValue).replaceAll("open?", "uc?"),
       };
     });
   return data;

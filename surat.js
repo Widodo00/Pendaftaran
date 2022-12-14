@@ -21,7 +21,7 @@ async function getDatasurat() {
         alamat: values[9].formattedValue,
         telp: values[10].formattedValue,
         email: values[11].formattedValue,
-        foto: values[12].formattedValue.replaceAll("open?", "uc?"),
+        foto: String(values[12].formattedValue).replaceAll("open?", "uc?"),
       };
     });
   return data;
