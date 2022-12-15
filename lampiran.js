@@ -21,8 +21,8 @@ async function getDatalampiran() {
 function dataItemTemplatelampiran(item, n) {
   if (`${item.KTP}` == n) {
     return `
-            <p><img src="${item.fotoKTP}" style="height: 6cm"/></p>
-            <p></p><img src="${item.fotoKK}" style="height: 21cm"/></p>
+            <p><img src="${item.fotoKTP}" style="width: 9cm"/></p>
+            <p></p><img src="${item.fotoKK}" style="width: 20cm"/></p>
         `;
   }
 }
