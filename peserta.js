@@ -10,7 +10,7 @@ async function getData() {
     .map((row) => {
       const { values } = row;
       return {
-        KTP: values[1].formattedValue,
+        KTP: String(values[1].formattedValue),
         Nama: values[2].formattedValue,
       };
     });
