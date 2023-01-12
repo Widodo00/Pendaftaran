@@ -17,8 +17,9 @@ async function getData() {
   return data;
 }
 
-function dataItemTemplate(item) {
+function dataItemTemplate(item,index) {
   return `<tr>
+        <td style="padding-left: 1cm; border: 1px solid black">${index+1}</td>
         <td style="padding-left: 1cm; border: 1px solid black">${item.KTP}</td>
         <td style="padding-left: 1cm; border: 1px solid black">${item.Nama}</td>
         <td style="border: 1px solid black"><center><button type="button" class="btn btn-primary" value="true" onclick="tampil(1);renderSurat(${item.KTP});renderttd(${item.KTP});renderlampiran(${item.KTP})">Lihat Surat</button>
@@ -31,10 +32,11 @@ async function renderData() {
   try {
     const data = await getData();
     wrapperDOM.innerHTML =
-      "<tr><th style='border: 1px solid black'><center>No. KTP</center></th>" +
+      "<tr><th style='border: 1px solid black'><center>No</center></th>" +
+      "<th style='border: 1px solid black'><center>No. KTP</center></th>" +
       "<th style='border: 1px solid black'><center>Nama Lengkap</center></th>" +
       "<th style='border: 1px solid black'><center>Aksi</center></th></tr>" +
-      data.map((item) => dataItemTemplate(item)).join("");
+      data.map((item,index) => dataItemTemplate(item,index)).join("");
   } catch (error) {
     wrapperDOM.innerHTML = error;
   }
