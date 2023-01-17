@@ -12,7 +12,7 @@ async function getDatattd() {
       return {
         KTP: values[1].formattedValue,
         nama: values[2].formattedValue,
-        tanggalttd: values[22].formattedValue,
+        tanggalttd: String(values[22].formattedValue).replaceAll("open", "uc"),
         fotottd: String(values[15].formattedValue).replaceAll("open", "uc"),
       };
     });
